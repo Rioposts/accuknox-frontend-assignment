@@ -1,0 +1,21 @@
+.widget {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.widget-content {
+  flex-grow: 1;
+  color: #666;
+}
