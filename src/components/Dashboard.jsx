@@ -1,29 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Category from './Category';
-import useDashboardStore from '../store/dashboardStore'; // Import our store!
+import AddWidgetModal from './AddWidgetModal'; // Import the new modal
+import useDashboardStore from '../store/dashboardStore';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  // Get the 'categories' state directly from our store
   const categories = useDashboardStore((state) => state.categories);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeCategoryId, setActiveCategoryId] = useState(null);
+
+  const handleOpenModal = (categoryId) => {
+    setActiveCategoryId(categoryId);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setActiveCategoryId(null);
+  };
 
   return (
     <main className="dashboard">
       <header className="dashboard-header">
         <h1>CNAPP Dashboard</h1>
-        {/* We will add the buttons here later */}
       </header>
       <div className="categories-container">
-        {/* The component now renders data from the live store */}
-        {categories.map(category => (
+        {categories.map((category) => (
           <Category
             key={category.id}
-            id={category.id} // Pass down the category ID
+            id={category.id}
             title={category.categoryTitle}
             widgets={category.widgets}
+            onAddWidget={() => handleOpenModal(category.id)} // Pass down the open modal function
           />
         ))}
       </div>
+
+      {/* Conditionally render the modal */}
+      {isModalOpen && (
+        <AddWidgetModal
+          categoryId={activeCategoryId}
+          onClose={handleCloseModal}
+        />
+      )}
     </main>
   );
 };
