@@ -1,10 +1,13 @@
 import React from 'react';
 import './Widget.css';
 
-const Widget = ({ title, content }) => {
+const Widget = ({ title, content, onRemove }) => {
   return (
     <div className="widget">
-      <h3 className="widget-title">{title}</h3>
+      <div className="widget-header">
+        <h3 className="widget-title">{title}</h3>
+        <button onClick={onRemove} className="remove-widget-btn">×</button>
+      </div>
       <div className="widget-content">
         <p>{content}</p>
       </div>

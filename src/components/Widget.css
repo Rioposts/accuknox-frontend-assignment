@@ -19,3 +19,28 @@
   flex-grow: 1;
   color: #666;
 }
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.widget-title {
+  margin-bottom: 0; /* Remove the old margin */
+}
+
+.remove-widget-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.remove-widget-btn:hover {
+  color: #333;
+}
