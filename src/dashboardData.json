@@ -6,7 +6,10 @@
       {
         "id": "cloud-accounts",
         "widgetTitle": "Cloud Accounts",
-        "content": "This is the Cloud Accounts widget."
+        "chartData": [
+          { "name": "Connected", "value": 2 },
+          { "name": "Not Connected", "value": 2 }
+        ]
       },
       {
         "id": "cloud-risk",
@@ -38,7 +41,12 @@
       {
         "id": "image-risk",
         "widgetTitle": "Image Risk Assessment",
-        "content": "This is the Image Risk Assessment widget."
+        "chartData": [
+          { "name": "Critical", "value": 4 },
+          { "name": "High", "value": 138 },
+          { "name": "Medium", "value": 790 },
+          { "name": "Low", "value": 538 }
+        ]
       },
       {
         "id": "image-security",
