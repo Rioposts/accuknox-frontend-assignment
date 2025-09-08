@@ -22,23 +22,20 @@
 
 .modal-content h2 {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   color: #333;
 }
 
-.form-group {
+.modal-content p {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.search-bar {
   margin-bottom: 1.5rem;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #555;
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
+.search-bar input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
@@ -46,42 +43,66 @@
   font-size: 1rem;
 }
 
-.form-group textarea {
-  min-height: 100px;
-  resize: vertical;
+.widget-list {
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.widget-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.widget-list-item:last-child {
+  border-bottom: none;
+}
+
+.widget-list-item:hover {
+  background-color: #f9f9f9;
+}
+
+.widget-list-item.disabled {
+  cursor: not-allowed;
+  color: #aaa;
+  background-color: #f5f5f5;
+}
+
+.added-tag {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.no-results {
+  padding: 1rem;
+  text-align: center;
+  color: #999;
 }
 
 .form-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 1rem;
   margin-top: 2rem;
 }
 
-.form-actions button {
+.btn-cancel {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.btn-cancel {
   background-color: #f0f0f0;
   color: #333;
+  transition: background-color 0.2s ease;
 }
 
 .btn-cancel:hover {
   background-color: #e0e0e0;
-}
-
-.btn-confirm {
-  background-color: #007bff;
-  color: white;
-}
-
-.btn-confirm:hover {
-  background-color: #0056b3;
 }
