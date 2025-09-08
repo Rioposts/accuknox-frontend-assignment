@@ -3,15 +3,15 @@ import useDashboardStore from '../store/dashboardStore';
 import './AddWidgetModal.css';
 
 const AddWidgetModal = ({ categoryId, onClose }) => {
-  // Get what we need from the store
+
   const { addWidget, availableWidgets, searchTerm, setSearchTerm } = useDashboardStore();
 
-  // Get the widgets already in the current category to disable them in the list
+  
   const currentCategoryWidgets = useDashboardStore(
     (state) => state.categories.find((c) => c.id === categoryId)?.widgets || []
   );
 
-  // Filter the list of available widgets based on the search term
+  
   const filteredWidgets = useMemo(() => {
     return availableWidgets.filter((widget) =>
       widget.widgetTitle.toLowerCase().includes(searchTerm.toLowerCase())
@@ -20,7 +20,7 @@ const AddWidgetModal = ({ categoryId, onClose }) => {
 
   const handleAddWidget = (widget) => {
     addWidget(categoryId, widget);
-    onClose(); // Close the modal after adding
+    onClose(); 
   };
 
   return (
@@ -29,7 +29,7 @@ const AddWidgetModal = ({ categoryId, onClose }) => {
         <h2>Add Widget</h2>
         <p>Personalize your dashboard by adding the following widgets.</p>
 
-        {/* Search Input */}
+      
         <div className="search-bar">
           <input
             type="text"
@@ -39,7 +39,7 @@ const AddWidgetModal = ({ categoryId, onClose }) => {
           />
         </div>
 
-        {/* List of Widgets */}
+       
         <div className="widget-list">
           {filteredWidgets.length > 0 ? (
             filteredWidgets.map((widget) => {

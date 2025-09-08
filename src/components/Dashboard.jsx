@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Category from './Category';
-import AddWidgetModal from './AddWidgetModal'; // Import the new modal
+import AddWidgetModal from './AddWidgetModal';
 import useDashboardStore from '../store/dashboardStore';
 import './Dashboard.css';
 
@@ -21,9 +21,11 @@ const Dashboard = () => {
 
   return (
     <main className="dashboard">
-      <header className="dashboard-header">
-        <h1>CNAPP Dashboard</h1>
-      </header>
+      <div className="dashboard-header-container">
+        <header className="dashboard-header">
+          <h1>CNAPP Dashboard</h1>
+        </header>
+      </div>
       <div className="categories-container">
         {categories.map((category) => (
           <Category
@@ -31,12 +33,11 @@ const Dashboard = () => {
             id={category.id}
             title={category.categoryTitle}
             widgets={category.widgets}
-            onAddWidget={() => handleOpenModal(category.id)} // Pass down the open modal function
+            onAddWidget={() => handleOpenModal(category.id)}
           />
         ))}
       </div>
 
-      {/* Conditionally render the modal */}
       {isModalOpen && (
         <AddWidgetModal
           categoryId={activeCategoryId}

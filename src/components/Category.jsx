@@ -13,7 +13,7 @@ const Category = ({ id: categoryId, title, widgets, onAddWidget }) => {
   {widgets.map(widget => (
     <Widget
       key={widget.id}
-      widget={widget} // Pass the whole widget object
+      widget={widget} 
       onRemove={() => removeWidget(categoryId, widget.id)}
     />
   ))}

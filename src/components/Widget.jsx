@@ -3,9 +3,9 @@ import CloudAccountChart from './charts/CloudAccountChart';
 import ImageRiskChart from './charts/ImageRiskChart';
 import './Widget.css';
 
-// This is our "smart" content renderer
+
 const renderWidgetContent = (widget) => {
-  // If the widget has chartData, decide which chart to show
+  
   if (widget.chartData) {
     switch (widget.id) {
       case 'cloud-accounts':
@@ -13,11 +13,11 @@ const renderWidgetContent = (widget) => {
       case 'image-risk':
         return <ImageRiskChart data={widget.chartData} />;
       default:
-        // Fallback for other potential charts
+        
         return <p>{JSON.stringify(widget.chartData)}</p>;
     }
   }
-  // Otherwise, just show the plain text content
+  
   return <p>{widget.content}</p>;
 };
 

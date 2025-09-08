@@ -1,23 +1,23 @@
 import { create } from 'zustand';
 import { produce } from 'immer';
 import initialData from '../dashboardData.json';
-import allWidgets from '../availableWidgets.json'; // Import the master list
+import allWidgets from '../availableWidgets.json'; 
 
 const useDashboardStore = create((set) => ({
-  // STATE
+  
   categories: initialData,
   availableWidgets: allWidgets,
-  searchTerm: '', // New state for the search term
+  searchTerm: '', 
 
-  // ACTIONS
-  setSearchTerm: (term) => set({ searchTerm: term }), // New action to update the search term
+  
+  setSearchTerm: (term) => set({ searchTerm: term }), 
 
   addWidget: (categoryId, widget) =>
     set(
       produce((state) => {
         const category = state.categories.find((c) => c.id === categoryId);
         if (category) {
-          // Check to prevent adding the same widget twice
+          
           const widgetExists = category.widgets.some((w) => w.id === widget.id);
           if (!widgetExists) {
             category.widgets.push(widget);

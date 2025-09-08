@@ -1,8 +1,7 @@
-/* src/components/Dashboard.css */
 
 .dashboard {
   width: 100%;
-  max-width: 1400px; /* Don't let it get too wide on big screens */
+  max-width: 1400px; 
   padding: 2rem;
   min-height: 100vh;
 }
@@ -20,9 +19,22 @@
   font-weight: 700;
 }
 
-/* This is the main container for all category sections */
+
 .categories-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+
+.dashboard-header-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header {
+  margin-bottom: 0; 
 }
